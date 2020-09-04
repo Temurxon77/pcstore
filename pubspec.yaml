@@ -23,7 +23,8 @@ flutter:
    - assets/images/asus_pc.jpg
    - assets/images/aura_pc.jpg
    - assets/images/msi_pc.jpg
-
+   - assets/images/asus_rtx.jpg
+   - assets/images/asusRog_cartbg.jpeg
 
   # example:
   # fonts:

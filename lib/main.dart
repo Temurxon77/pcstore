@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:pcstore/screens/Cart.dart';
 import 'package:pcstore/screens/FavouriteProducts.dart';
 import 'package:pcstore/screens/ProductDetailed.dart';
 import 'package:pcstore/screens/introPage.dart';
 import 'package:pcstore/screens/sideMenu.dart';
+import 'package:pcstore/screens/updatedCart.dart';
 
 void main() => runApp(MyApp());
 
@@ -13,7 +15,7 @@ class MyApp extends StatelessWidget {
       title: 'PC Store',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.red,
+        primarySwatch: Colors.green,
       ),
       home: MyHomePage(title: 'PC store'),
     );
@@ -42,7 +44,7 @@ class _MyHomePageState extends State<MyHomePage> {
       //   title: Text(widget.title)
       // ),
       body: Center(
-        child: MaterialFavouriteProducts()
+        child: MaterialCartUpdated()
       )// This trailing comma makes auto-formatting nicer for build methods.
     );
   }

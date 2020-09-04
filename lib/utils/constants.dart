@@ -26,6 +26,24 @@ class Constants {
     "QR scanner",
     "Exit"
   ];
+  final List<Map<String,String>> cartContent = [
+    {
+    "ContentTitle": "Base Price",
+    "ContentValue": "\$5.00",
+    "ProductTitle": "intel Core i9 9900K" 
+    },
+    {
+    "ContentTitle": "Base Price",
+    "ContentValue": "\$12.00",
+    "ProductTitle": "ASUS Rog Strix RTX 2080 Ti" 
+    },
+    {
+    "ContentTitle": "Base Price",
+    "ContentValue": "\$15.00",
+    "ProductTitle": "MSI Keyboard" 
+    },
+  ];
+
   final List<IconData> activityIcons = [
     IconData(0xe88a),
     IconData(0xe896),

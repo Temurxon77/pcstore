@@ -12,7 +12,7 @@ class MaterialFavouriteProducts extends StatelessWidget {
       body: ListView.builder(
         itemCount: 12,
         itemBuilder: (BuildContext context,int i){
-          return i%2 == 0 ? ProductView() : Divider(indent: 30.0,endIndent: 30.0,height: 10.0,color: Colors.red);
+          return i%2 == 0 ? ProductView() : Divider(indent: 30.0,endIndent: 30.0,height: 10.0,color: Colors.black);
       }) 
     );
   }
