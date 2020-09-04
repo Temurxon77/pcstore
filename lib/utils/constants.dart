@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 
 class Constants {
   final Color introPageBgColor = Color(0xFA161616);
-  final Color introPageDescriptionTextColor = Color(0xFAB6B4B5);
-  final Color 
+  final Color introPageDescriptionTextColor = Color(0xFAB6B4B5); 
   final List<String> assetsListIntroPage = [
     "assets/images/asus_pc.jpg",
     "assets/images/aura_pc.jpg",
