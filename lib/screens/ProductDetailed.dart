@@ -16,7 +16,11 @@ class MaterialProductDescriptionState extends State<MaterialProductDescription> 
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
-        leading: Icon(Icons.arrow_back_ios,color: Colors.black),
+        leading: IconButton(icon:Icon(Icons.arrow_back_ios,color: Colors.black),onPressed: () {
+          if(Navigator.of(context).canPop()){
+            Navigator.of(context).pop();
+          }
+        },),
         title: Text("Kick Frappe",style: TextStyle(color: Colors.black)),
         centerTitle: true,
         actions: [

@@ -1,23 +1,48 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_redux/flutter_redux.dart';
+import 'package:pcstore/redux/reducers/FontReducer.dart';
+import 'package:pcstore/redux/store/AppState.dart';
+
 import 'package:pcstore/screens/Cart.dart';
 import 'package:pcstore/screens/FavouriteProducts.dart';
+import 'package:pcstore/screens/LoginPage.dart';
 import 'package:pcstore/screens/ProductDetailed.dart';
+import 'package:pcstore/screens/ProductView.dart';
+import 'package:pcstore/screens/Settings.dart';
 import 'package:pcstore/screens/introPage.dart';
 import 'package:pcstore/screens/sideMenu.dart';
 import 'package:pcstore/screens/updatedCart.dart';
+import 'package:redux/redux.dart';
 
-void main() => runApp(MyApp());
+void main(){
+  final _initialState = AppState(sliderFontSize: 0.5,isLogged: false,isLoading: false);
+  final Store<AppState> _store = Store<AppState>(reducer,initialState: _initialState);
+  runApp(MyApp(store: _store));
+}
 
 class MyApp extends StatelessWidget {
+  final Store<AppState> store;
+
+  MyApp({@required this.store});
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'PC Store',
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primarySwatch: Colors.green,
-      ),
-      home: MyHomePage(title: 'PC store'),
+    return StoreProvider(
+      store: this.store, 
+      child: MaterialApp(
+        title: 'PC Store',
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(
+          primarySwatch: Colors.green,
+        ),
+        initialRoute: store.state.isLogged ? '/home' : '/introPage',
+        routes: {
+          '/home': (BuildContext context) => MyHomePage(title: 'PC store'),
+          '/introPage': (BuildContext context) => MaterialIntroPage(),
+          '/login': (BuildContext context) => MaterialLogin(),
+          '/settings': (BuildContext context) => Settings(),
+          '/detailedProduct': (BuildContext context) => MaterialProductDescription()
+        }
+      )
     );
   }
 }
@@ -40,12 +65,22 @@ class _MyHomePageState extends State<MyHomePage> {
           padding: const EdgeInsets.only(left: 10.0,right: 10.0)
         ),
       ),
-      // appBar: AppBar(
-      //   title: Text(widget.title)
-      // ),
-      body: Center(
-        child: MaterialCartUpdated()
-      )// This trailing comma makes auto-formatting nicer for build methods.
+      appBar: AppBar(
+        title: Text(widget.title)
+      ),
+      body: SafeArea(
+        child: ListView.builder(
+          itemCount: 6,
+          itemBuilder: (BuildContext context,int index){
+          return  GestureDetector(child: ProductView(),onTap: (){ 
+            try{
+              Navigator.of(context).pushNamed("/detailedProduct");
+            }catch(e){
+              print(e);
+            }
+          },);
+        })
+      )
     );
   }
 }

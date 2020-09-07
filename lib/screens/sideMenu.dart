@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pcstore/utils/constants.dart';
 
 class MaterialMenu extends StatelessWidget {
   @override
@@ -11,9 +12,20 @@ class MaterialMenu extends StatelessWidget {
         )),
         SizedBox(height: 20.0),
         ListTile(
-          title: Text("Chuck Norris",textAlign: TextAlign.center,style: TextStyle(fontSize: 22.0)),
           subtitle: Text("Texas,USA",textAlign: TextAlign.center),
-        )
+        ),
+        SizedBox(height: 10.0),
+        ListTile(
+          title: Text("Home"),
+        ),
+        SizedBox(height: 10.0),
+        ListTile(
+          title: Text("Settings"),
+        ),
+        SizedBox(height: 10.0),
+        ListTile(
+          title: Text("Exit"),
+        ),
       ]
     );
   }

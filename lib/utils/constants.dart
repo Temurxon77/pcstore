@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 class Constants {
-  final Color introPageBgColor = Color(0xFA161616);
-  final Color introPageDescriptionTextColor = Color(0xFAB6B4B5); 
+  final Color introPageBgColor = Color(0xFAFFFFFF);
+  final Color introPageDescriptionTextColor = Color(0xFFD2D2D2); 
   final List<String> assetsListIntroPage = [
     "assets/images/asus_pc.jpg",
     "assets/images/aura_pc.jpg",
@@ -52,4 +52,6 @@ class Constants {
     IconData(0xe329),
     IconData(0xe879),
   ];
+
+  final List<int> fontSizeListSettings = [14,16,18,20,24,28,30];
 }
