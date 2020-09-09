@@ -8,6 +8,11 @@ class MaterialFavouriteProducts extends StatelessWidget {
       appBar: AppBar(
         title: Text("Likes",style: TextStyle(fontSize: 20.0)),
         centerTitle: true,
+        leading: IconButton(icon: Icon(Icons.arrow_back_ios),onPressed: () {
+          if(Navigator.of(context).canPop()){
+            Navigator.of(context).pop();
+          }
+        },),
       ),
       body: ListView.builder(
         itemCount: 12,

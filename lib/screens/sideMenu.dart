@@ -10,22 +10,42 @@ class MaterialMenu extends StatelessWidget {
           backgroundImage: AssetImage("assets/images/asus_pc.jpg"),
           radius: 80.0,
         )),
-        SizedBox(height: 20.0),
+        SizedBox(height: 15.0),
         ListTile(
+          title: Text("Chuck Norris",textAlign: TextAlign.center),
           subtitle: Text("Texas,USA",textAlign: TextAlign.center),
         ),
-        SizedBox(height: 10.0),
+        Divider(height: 5.0,indent: 20.0,endIndent: 20.0,thickness: 0.5),
         ListTile(
           title: Text("Home"),
+          onTap: () {},
         ),
-        SizedBox(height: 10.0),
+        Divider(height: 5.0,indent: 20.0,endIndent: 20.0,thickness: 0.5),
+        ListTile(
+          title: Text("Cart"),
+          onTap: () {
+            Navigator.of(context).pushNamed("/cart");
+          },
+        ),
+        Divider(height: 5.0,indent: 20.0,endIndent: 20.0,thickness: 0.5),
+        ListTile(
+          title: Text("Favourites"),
+          onTap: () {
+            Navigator.of(context).pushNamed("/favourites");
+          },
+        ),
+        Divider(height: 5.0,indent: 20.0,endIndent: 20.0,thickness: 0.5),
         ListTile(
           title: Text("Settings"),
+          onTap: () {
+            Navigator.of(context).pushNamed("/settings");
+          },
         ),
-        SizedBox(height: 10.0),
+        Divider(height: 5.0,indent: 20.0,endIndent: 20.0,thickness: 0.5),
         ListTile(
-          title: Text("Exit"),
+          title: Text("Exit")
         ),
+        Divider(height: 5.0,indent: 20.0,endIndent: 20.0,thickness: 0.5),
       ]
     );
   }
@@ -36,6 +56,4 @@ class MaterialMenu extends StatelessWidget {
       title: Text(activityName),
     );
   }
-
-
 }

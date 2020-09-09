@@ -8,6 +8,7 @@ class AppState {
   bool isLogged;
   String phonenumber;
   bool isLoading;
+  
   AppState({@required this.sliderFontSize,this.bold = false,this.italic = false,this.isLogged = false,this.isLoading = false});
 
   AppState.fromAppState(AppState another) {

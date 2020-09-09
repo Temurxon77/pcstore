@@ -11,7 +11,7 @@ class CartContent extends StatelessWidget {
   @override
   Widget build(BuildContext context){
     return ListTile(
-      title: Text(this.contentTitleString,style: TextStyle(color: Color(this.textColorValueHex))),
+      title: Text("Price",style: TextStyle(color: Color(this.textColorValueHex))),
       trailing: Text(this.contentValue, style: TextStyle(color: Color(this.textColorValueHex),fontWeight: FontWeight.bold))
     );
   }

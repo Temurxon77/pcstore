@@ -8,7 +8,7 @@ class ProductView extends StatelessWidget {
       child:Row(
       mainAxisSize: MainAxisSize.max,
       children: [
-        Expanded(child: Image.asset("assets/images/asus_pc.jpg"),flex: 1),
+        Expanded(child: Image.asset("assets/images/asus_pc.jpg",fit: BoxFit.fill),flex: 1),
         Expanded(
           flex: 3,
           child: Column(
@@ -26,7 +26,7 @@ class ProductView extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
             Text("\$10.50",style: TextStyle(color: Colors.green[300],fontSize: 18.0)),
-            Icon(Icons.favorite,color: Colors.redAccent)
+            IconButton(icon:Icon(Icons.favorite_border),onPressed: () {})
           ]))
           ]
         ))
@@ -34,3 +34,7 @@ class ProductView extends StatelessWidget {
     );
   }
 }
+
+// class ProductFavouriteView extends StatelessWidget {
+  
+// }

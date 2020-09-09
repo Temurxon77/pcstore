@@ -9,6 +9,7 @@ import 'package:pcstore/screens/LoginPage.dart';
 import 'package:pcstore/screens/ProductDetailed.dart';
 import 'package:pcstore/screens/ProductView.dart';
 import 'package:pcstore/screens/Settings.dart';
+import 'package:pcstore/screens/SignUpPage.dart';
 import 'package:pcstore/screens/introPage.dart';
 import 'package:pcstore/screens/sideMenu.dart';
 import 'package:pcstore/screens/updatedCart.dart';
@@ -39,7 +40,10 @@ class MyApp extends StatelessWidget {
           '/home': (BuildContext context) => MyHomePage(title: 'PC store'),
           '/introPage': (BuildContext context) => MaterialIntroPage(),
           '/login': (BuildContext context) => MaterialLogin(),
+          '/signUp': (BuildContext context) => MaterialSignUp(),
           '/settings': (BuildContext context) => Settings(),
+          '/favourites': (BuildContext context) => MaterialFavouriteProducts(),
+          '/cart': (BuildContext context) => MaterialCartUpdated(),
           '/detailedProduct': (BuildContext context) => MaterialProductDescription()
         }
       )

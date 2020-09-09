@@ -1,10 +1,5 @@
 import 'package:flutter/material.dart';
 
-
-import 'package:flutter/material.dart';
-import 'package:pcstore/screens/CartContent.dart';
-import 'package:pcstore/screens/MaterialButton.dart';
-
 import '../utils/constants.dart';
 
 class MaterialCartUpdated extends StatefulWidget {
@@ -28,7 +23,11 @@ class MaterialCartUpdatedState extends State<MaterialCartUpdated> {
     return Scaffold(
           appBar: AppBar(
             backgroundColor: Color(0xFA0C9F66),
-            leading: IconButton(icon: Icon(Icons.arrow_back_ios,color: Colors.white),onPressed: (){}),
+            leading: IconButton(icon: Icon(Icons.arrow_back_ios,color: Colors.white),onPressed: (){
+              if(Navigator.of(context).canPop()){
+                Navigator.of(context).pop();
+              }
+            }),
             title: Text("Cart",style: TextStyle(color: Colors.white)),
             centerTitle: true
           ),
@@ -56,8 +55,8 @@ class MaterialCartUpdatedState extends State<MaterialCartUpdated> {
                             children: <Widget>[
                             Text("\$12.00"),
                             SizedBox(width: 20.0),
-                            IconButton(
-                              icon: Icon(Icons.maximize,color: Colors.green),
+                            FlatButton(
+                              child: Text("-",style: TextStyle(fontSize: 36.0,color: Colors.green)),
                               onPressed: () {
                                 if(quantity > 0){
                                   setState(() {
@@ -68,8 +67,8 @@ class MaterialCartUpdatedState extends State<MaterialCartUpdated> {
                             ),
                             Text("$quantity",style: TextStyle(fontSize: 15.0,color: Colors.black)),
                             
-                            IconButton(
-                              icon: Icon(Icons.add,color: Colors.green),
+                            FlatButton(
+                              child: Text("+",style: TextStyle(fontSize: 24.0,color: Colors.green)),
                               onPressed: () {
                                 setState(() {
                                   quantity++;
@@ -104,8 +103,8 @@ class MaterialCartUpdatedState extends State<MaterialCartUpdated> {
                             children: <Widget>[
                             Text("\$12.00"),
                             SizedBox(width: 20.0),
-                            IconButton(
-                              icon: Icon(Icons.maximize,color: Colors.green),
+                            FlatButton(
+                              child: Text("-",style: TextStyle(fontSize: 36.0,color: Colors.green)),
                               onPressed: () {
                                 if(quantity > 0){
                                   setState(() {
@@ -116,8 +115,8 @@ class MaterialCartUpdatedState extends State<MaterialCartUpdated> {
                             ),
                             Text("$quantity",style: TextStyle(fontSize: 15.0,color: Colors.black)),
                             
-                            IconButton(
-                              icon: Icon(Icons.add,color: Colors.green),
+                            FlatButton(
+                              child: Text("+",style: TextStyle(fontSize: 24.0,color: Colors.green)),
                               onPressed: () {
                                 setState(() {
                                   quantity++;

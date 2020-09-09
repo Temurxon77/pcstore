@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pcstore/models/Product.dart';
 import 'package:pcstore/screens/CartContent.dart';
 import 'package:pcstore/screens/MaterialButton.dart';
 
@@ -14,11 +15,16 @@ class MaterialCart extends StatefulWidget {
 
 class MaterialCartState extends State<MaterialCart> {
   Map<String,String> dataSet;
+  List<Product> products;
 
   @override
   void initState(){
     super.initState();
     dataSet = MaterialCart.constants.cartContent[0];
+    products = [
+      Product(title: "intel Core i7 9700K",description: "6 cores 12 threads",quantity: 2,price: 12.00),
+      Product(title: "intel Core i5 9400F",description: "4 cores 8 threads",quantity: 4,price: 6.00)
+    ];
   }
 
   @override
@@ -30,9 +36,8 @@ class MaterialCartState extends State<MaterialCart> {
             title: Text("Cart",style: TextStyle(color: Colors.white)),
             centerTitle: true
           ),
-          body: SafeArea(child: ListView(
-            children: [
-              Container(
+          body: SafeArea(child: ListView(children:[
+            Container(
                 height: 300.0,
                 width: double.infinity,
                 child: PageView(
@@ -77,7 +82,7 @@ class MaterialCartState extends State<MaterialCart> {
                 buttonCallback: (){},
                 paddingAll: 10.0, borderColorValueHex: 0xFACECECE, borderWidth: 1.0, splashColorValueHex: 0xFA0C9F66,
               )
-            ]
+          ]
       )
       )
     );
