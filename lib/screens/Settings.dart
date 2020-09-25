@@ -10,17 +10,7 @@ class Settings extends StatelessWidget {
   //static Constants constants = new Constants();
   @override
   Widget build(BuildContext context){
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("Settings"),
-        centerTitle: true,
-        leading: IconButton(icon: Icon(Icons.arrow_back_ios),onPressed: () {
-          if(Navigator.of(context).canPop()){
-            Navigator.of(context).pop();
-          }
-        })
-      ),
-      body: StoreConnector<AppState,AppState>(
+    return Material(child: StoreConnector<AppState,AppState>(
         converter: (store) => store.state,
         builder: (BuildContext context,AppState state){
           return SafeArea(child: ListView(
@@ -59,8 +49,7 @@ class Settings extends StatelessWidget {
               )
             ]
           ));
-        }
-      )
+        })
     );
   } 
 }

@@ -12,11 +12,6 @@ class MaterialCartUpdated extends StatefulWidget {
 
 class MaterialCartUpdatedState extends State<MaterialCartUpdated> {
 
-  @override
-  void initState(){
-    super.initState();
-  }
-
   int quantity = 0;
   @override
   Widget build(BuildContext context){

@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:pcstore/pages/CartPage.dart';
+import 'package:pcstore/pages/CategoriesPage.dart';
+import 'package:pcstore/pages/SettingsPage.dart';
+import 'package:pcstore/pages/productsPage.dart';
+import 'package:pcstore/screens/categoryPage.dart';
+import 'package:redux/redux.dart';
 import 'package:flutter_redux/flutter_redux.dart';
+
 import 'package:pcstore/redux/reducers/FontReducer.dart';
 import 'package:pcstore/redux/store/AppState.dart';
-
-import 'package:pcstore/screens/Cart.dart';
 import 'package:pcstore/screens/FavouriteProducts.dart';
 import 'package:pcstore/screens/LoginPage.dart';
 import 'package:pcstore/screens/ProductDetailed.dart';
@@ -13,7 +18,7 @@ import 'package:pcstore/screens/SignUpPage.dart';
 import 'package:pcstore/screens/introPage.dart';
 import 'package:pcstore/screens/sideMenu.dart';
 import 'package:pcstore/screens/updatedCart.dart';
-import 'package:redux/redux.dart';
+
 
 void main(){
   final _initialState = AppState(sliderFontSize: 0.5,isLogged: false,isLoading: false);
@@ -37,13 +42,14 @@ class MyApp extends StatelessWidget {
         ),
         initialRoute: store.state.isLogged ? '/home' : '/introPage',
         routes: {
-          '/home': (BuildContext context) => MyHomePage(title: 'PC store'),
+          '/home': (BuildContext context) => MyHomePage(title: 'Categories'),
           '/introPage': (BuildContext context) => MaterialIntroPage(),
           '/login': (BuildContext context) => MaterialLogin(),
           '/signUp': (BuildContext context) => MaterialSignUp(),
-          '/settings': (BuildContext context) => Settings(),
+          '/settings': (BuildContext context) => MaterialSettingsPage(),
           '/favourites': (BuildContext context) => MaterialFavouriteProducts(),
-          '/cart': (BuildContext context) => MaterialCartUpdated(),
+          '/cart': (BuildContext context) => MaterialCartPage(),
+          '/products': (BuildContext context) => MaterialProductsList(),
           '/detailedProduct': (BuildContext context) => MaterialProductDescription()
         }
       )
@@ -73,17 +79,7 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title)
       ),
       body: SafeArea(
-        child: ListView.builder(
-          itemCount: 6,
-          itemBuilder: (BuildContext context,int index){
-          return  GestureDetector(child: ProductView(),onTap: (){ 
-            try{
-              Navigator.of(context).pushNamed("/detailedProduct");
-            }catch(e){
-              print(e);
-            }
-          },);
-        })
+          child: CategoriesPage()
       )
     );
   }

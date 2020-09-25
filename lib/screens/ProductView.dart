@@ -3,7 +3,15 @@ import 'package:flutter/material.dart';
 class ProductView extends StatelessWidget {
   @override
   Widget build(BuildContext context){
-    return Padding(
+    return GestureDetector(
+      onTap: (){
+        try{
+          Navigator.of(context).pushNamed("/detailedProduct");
+        }catch(e){
+          print(e);
+        }
+      },
+      child:Padding(
       padding: const EdgeInsets.only(left: 20.0,right: 20.0),
       child:Row(
       mainAxisSize: MainAxisSize.max,
@@ -31,6 +39,7 @@ class ProductView extends StatelessWidget {
           ]
         ))
       ])
+      )
     );
   }
 }

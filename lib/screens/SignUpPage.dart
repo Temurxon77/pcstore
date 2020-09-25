@@ -37,10 +37,11 @@ class MaterialSignUp extends StatelessWidget {
             children: [
               CircleAvatar(
                 backgroundImage: AssetImage("assets/images/asus_pc.jpg"),
-                radius: 70.0,
+                radius: 85.0,
               ),
-              SizedBox(height: 20.0),
+              SizedBox(height: 40.0),
               Padding(child: MaterialTextField(
+                regex: '^(\+9989(9|8|7|5|4|3|1|0)[0-9]{7,7})\$',
                 numberController: numberController,
                 labelText: "Phone Number",
                 placeholder: "+998991234567"
@@ -58,7 +59,7 @@ class MaterialSignUp extends StatelessWidget {
               // )
               MaterialRawButton(
                 buttonCallback: signUpAction,
-                 buttonText: "Login",
+                 buttonText: "Sign Up",
                  buttonTextColorHex: 0xFFFFFFFF,
                  buttonTextFontSize: 18.0,
                  minWidth: 120.0,

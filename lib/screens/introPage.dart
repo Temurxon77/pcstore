@@ -60,7 +60,7 @@ class MaterialIntroPage extends StatelessWidget {
           ],
         )),
         Expanded(child: MaterialRawButton(buttonCallback: () {
-           Navigator.of(context).pushNamed("/signUp");
+           Navigator.of(context).pushNamed("/login");
         }, buttonText: "Get Started", buttonTextColorHex: 0xFFFFFFFF, buttonTextFontSize: 18.0,maxWidth: double.infinity,maxHeight: 60.0, minWidth: double.infinity, minHeight: 50.0, colorValueHex: 0xFA0C9F66, paddingAll: 0.0))
       ]
     );

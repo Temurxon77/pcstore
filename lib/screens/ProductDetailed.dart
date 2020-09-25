@@ -6,8 +6,6 @@ class MaterialProductDescription extends StatefulWidget {
     return MaterialProductDescriptionState();
   }
 }
-
-
 class MaterialProductDescriptionState extends State<MaterialProductDescription> {
   int dropdownValue = 1;
 
@@ -24,12 +22,12 @@ class MaterialProductDescriptionState extends State<MaterialProductDescription> 
         title: Text("Kick Frappe",style: TextStyle(color: Colors.black)),
         centerTitle: true,
         actions: [
-          IconButton(icon: Icon(Icons.favorite,color: Colors.redAccent), onPressed: () { })
+          IconButton(icon: Icon(Icons.favorite_border,color: Colors.black), onPressed: () { })
         ],
       ),
-      body: Column(
+      body: ListView(
         children: [
-          Expanded(child:Image.asset("assets/images/asus_pc.jpg",fit: BoxFit.cover),flex: 4),
+          Expanded(child:Image.asset("assets/images/asus_pc.jpg",fit: BoxFit.cover),flex: 3),
           Expanded(child: Padding(
             child:Text("Как увеличить количество поклонников страницы в Facebook? Как сделать так, чтобы они начали с вами взаимодействовать? И как превратить этих людей в клиентов и покупателей? Обо всем этом читайте в нашем полном пошаговом гайде.",
             style: TextStyle(fontSize: 24.0),
@@ -50,17 +48,11 @@ class MaterialProductDescriptionState extends State<MaterialProductDescription> 
                 mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text("Quantity",style: TextStyle(fontSize: 20.0),),
-                DropdownButton<int>(
-                  value: dropdownValue,
-                  icon: Icon(Icons.arrow_drop_down),
-                  iconSize: 24,
-                  items: List.generate(20, (index) => DropdownMenuItem(child: Text("${index+1}"),value: index+1)),
-                  onChanged: (int value){
-                    setState(() {
-                      dropdownValue = value;
-                    });
-                  } 
-                )
+                SizedBox(height: 50.0,width: 50.0,child:TextFormField(
+                  textAlign: TextAlign.center,
+                  initialValue: "1",
+                  keyboardType: TextInputType.number,
+                ))
               ],
             )),
             Container(
@@ -83,9 +75,9 @@ class MaterialProductDescriptionState extends State<MaterialProductDescription> 
             flex: 1,
             child: RawMaterialButton(
             onPressed: (){ },
-            constraints: BoxConstraints(minWidth: MediaQuery.of(context).size.width),
+            constraints: BoxConstraints(minWidth: double.infinity,minHeight: 70.0,maxHeight: 80.0),
             fillColor: Color(0xFA0C9F66),
-            child: Text("Place the order",style: TextStyle(color: Colors.white)),          
+            child: Text("Place the order",style: TextStyle(color: Colors.white,fontSize: 20.0)),          
           ))
         ]
       )
